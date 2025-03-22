@@ -5,7 +5,7 @@ namespace empresa{
         private _saldo: number;
 
         constructor (codigo:number){
-            super()
+            super();
             this._codigo = codigo;
         }
 
@@ -13,18 +13,23 @@ namespace empresa{
             return this._codigo;
         }
 
-        set codigo(codigo:number){
-            this._codigo = codigo;
-        }
-
+       
         get saldo(){
             return this._saldo;
         }
 
-        set saldo(saldo:number){
-            this._saldo = saldo;
-        }       
+        public deposita(valor:number){
+            this._saldo += valor;
+        }
 
-      }
+        public compra(valorCompra:number){
+            if(this._saldo >= valorCompra){
+                this._saldo = this._saldo - valorCompra;
+                return true;
+            }else{
+                return false;
+        }
+     }
 
+  }
 }

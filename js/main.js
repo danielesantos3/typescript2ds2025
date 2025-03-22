@@ -4,16 +4,35 @@ var empresa;
     const calc = document.getElementById("calc");
     const campoNome = document.getElementById("campoNome");
     const campoAno = document.getElementById("campoAno");
+    const campoCodigo = document.getElementById("campoCodigo");
+    const campoDeposito = document.getElementById("campoDeposito");
+    const campoCompra = document.getElementById("campoCompra");
+    const btnComprar = document.getElementById("comprar");
+    const btnDeposito = document.getElementById("deposito");
+    let p;
     calc.addEventListener("click", () => {
-        let p = new empresa.Cliente(90);
+        p = new empresa.Cliente(parseInt(campoCodigo.value));
         p.nome = campoNome.value;
         p.anoNasc = parseInt(campoAno.value);
-        //p.codigo = 90;
-        p.saldo = 100;
+        p.deposita(100);
+        p.deposita(200);
         document.getElementById("nome").textContent = p.nome;
         document.getElementById("ano").textContent = p.anoNasc.toString();
         document.getElementById("idade").textContent = p.calcularIdade(2025).toString();
         document.getElementById("codigo").textContent = p.codigo.toString();
         document.getElementById("saldo").textContent = p.saldo.toString();
+    });
+    btnDeposito.addEventListener("click", () => {
+        p.deposita(parseFloat(campoDeposito.value));
+        document.getElementById("saldo").textContent = p.saldo.toString();
+    });
+    btnComprar.addEventListener("click", () => {
+        if (p.compra(parseFloat(campoCompra.value))) {
+            document.getElementById("saldo").textContent = p.saldo.toString();
+            alert("Obrigado pela compra!");
+        }
+        else {
+            alert("Saldo insuficiente faça um deposito");
+        }
     });
 })(empresa || (empresa = {}));
