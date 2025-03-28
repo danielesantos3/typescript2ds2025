@@ -1,45 +1,22 @@
-namespace empresa{
+namespace Escola{
+    
 
     const calc = document.getElementById("calc") as HTMLButtonElement;
     const campoNome = document.getElementById("campoNome") as HTMLInputElement;
     const campoAno = document.getElementById("campoAno") as HTMLInputElement;
+    const campoCPF = document.getElementById("campoCPF") as  HTMLInputElement;
+    const campoEndereço = document.getElementById("campoEndereço") as HTMLInputElement;
+    const campoTelefone = document.getElementById("campoTelefone") as HTMLInputElement;
+    const campoMatricula = document.getElementById("campoMatricula") as HTMLInputElement;
+    const cursoEscola =  document.getElementById("campoEscola") as HTMLInputElement;
+    const campoNota1 = document.getElementById("campoNota1") as HTMLInputElement;
+    const campoNota2 = document.getElementById("campoNota2") as HTMLInputElement;
+    const campoNota3 = document.getElementById("campoNota3") as HTMLInputElement;
+    const campoNota4 = document.getElementById("campoNota4") as HTMLInputElement;
+    const campomedia = document.getElementById("campomedia") as HTMLInputElement;
 
-    const campoCodigo = document.getElementById("campoCodigo") as  HTMLInputElement;
-
-    const campoDeposito =  document.getElementById("campoDeposito") as HTMLInputElement;
-    const campoCompra =  document.getElementById("campoCompra") as HTMLInputElement;
-
-    const btnComprar =  document.getElementById("comprar") as HTMLInputElement;
-    const btnDeposito =  document.getElementById("deposito") as HTMLInputElement;
-
-    let p: Cliente;
+    let p: Pessoa;
     
-    calc.addEventListener("click", ()=>{
-        p = new Cliente(parseInt(campoCodigo.value));
-        p.nome = campoNome.value;
-        p.anoNasc = parseInt(campoAno.value);
-
-        p.deposita(100);
-        p.deposita(200);
-
-        document.getElementById("nome").textContent = p.nome;
-        document.getElementById("ano").textContent = p.anoNasc.toString();
-        document.getElementById("idade").textContent = p.calcularIdade(2025).toString();
-        document.getElementById("codigo").textContent = p.codigo.toString();
-        document.getElementById("saldo").textContent = p.saldo.toString();
-    });
-
-    btnDeposito.addEventListener("click", ()=>{
-        p.deposita(parseFloat(campoDeposito.value));
-        document.getElementById("saldo").textContent = p.saldo.toString();
-    });
-
-    btnComprar.addEventListener("click", ()=>{
-       if(p.compra(parseFloat(campoCompra.value))){
-        document.getElementById("saldo").textContent = p.saldo.toString();
-        alert("Obrigado pela compra!")
-       }else{
-            alert("Saldo insuficiente faça um deposito")
-       }
- });
-}
+    calc.addEventListener("Aluno", ()=>{
+   
+    

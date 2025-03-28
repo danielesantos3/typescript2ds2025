@@ -1,7 +1,10 @@
-namespace empresa{
+namespace Escola{
     export abstract class Pessoa{
-        private _nome:string;
-        private _anoNasc:number;
+        _nome: string
+        _anoNasc: number
+        _cpf: string
+        _endereco: string
+        _telefone: string
 
         get nome(){
             return this._nome;
@@ -19,7 +22,31 @@ namespace empresa{
             this._anoNasc = anoNasc;
         }
 
-        public calcularIdade(anoAtual:number){
+        get cpf (){
+            return this._cpf;
+        }
+
+        set cpf(cpf:string){
+            this._cpf = cpf;
+        }
+
+        get endereco(){
+            return this._endereco;
+        }
+
+        set endereco(endereco:string){
+            this._endereco = endereco;
+        }
+
+        get telefone(){
+            return this._telefone;
+        }
+
+        set telefone(telefone:string){
+            this._telefone = telefone;
+        }
+
+        calcularIdade(anoAtual: number): number{
             return anoAtual - this._anoNasc;
         }
     }
